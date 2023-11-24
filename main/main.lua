@@ -17,7 +17,7 @@ end
 
 function love.draw()
     love.graphics.polygon("line", Entity.body:getWorldPoints(Entity.shape1:getPoints()))
-    love.graphics.circle("line",Entity.body.shape2:getX(),Entity.body.shape2:getY(),Entity.body.shape2:getRadius())
+    love.graphics.circle("line",Entity.shape2:getX(),Entity.shape2:getY(),Entity.shape2:getRadius())
     -- love.graphics.circle("fill", objects.ball.body:getX(), objects.ball.body:getY(), objects.ball.shape:getRadius())
 
 end
