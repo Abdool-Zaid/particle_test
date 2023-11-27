@@ -3,10 +3,10 @@ local particleImage = love.graphics.newImage("assets/green.png")
 
 -- Create a particle system
 local particleSystem = love.graphics.newParticleSystem(particleImage, 1000)
-particleSystem:setParticleLifetime(1, 2)
+particleSystem:setParticleLifetime(10)
 particleSystem:setLinearAcceleration(-20, -20, 20, 20)
 particleSystem:setColors(0, 1, 0, 1, 0, 1, 0, 0)  -- Green color
-particleSystem:setSizes(2, 1, 0.5)  -- Varying sizes for the particles
+particleSystem:setSizes(2, 1, 0.7,0.2,0.4)  -- Varying sizes for the particles
 
 
 function love.load()
@@ -42,10 +42,10 @@ end
 
 function love.mousepressed(x, y, button, istouch, presses)
     -- Emit particles when the mouse is pressed
-    particleSystem:emit(20)
 end
 
 function love.draw()
+    particleSystem:emit(1)
     love.graphics.line(Border.body:getWorldPoints(Border.shape:getPoints()))
     love.graphics.polygon("line", Entity.body:getWorldPoints(Entity.shape1:getPoints()))
     love.graphics.circle("line", Entity.body:getX(), Entity.body:getY(), Entity.shape2:getRadius())
